@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - display letters of the alphabet
+ * print_alphabet - display letters of the alphabet
  *
- * Return: Always 0.
+ * Description: from a to z
  **/
 void print_alphabet(void)
 {
