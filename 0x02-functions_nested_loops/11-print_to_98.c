@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_to_98 - print integers in the range n<=98<=n
  * @n: place holder for our integers
@@ -9,27 +9,19 @@ void print_to_98(int n)
 {
 	if (n <= 98)
 	{
-		for (; n <= 98; n++)
+		while (n < 98)
 		{
-			_putchar(n + 48);
-			if (n != 98)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			printf("%d", n);
+			n++;
 		}
 	}
 	else
 	{
-		for (; n >= 98; n--)
+		while (n > 98)
 		{
-			_putchar(n + 48);
-			if (n != 98)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			printf("%d, ", n);
+			n--;
 		}
 	}
-	return;
+	printf("%d\n, n);
 }
