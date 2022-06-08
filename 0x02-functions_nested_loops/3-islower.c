@@ -5,7 +5,7 @@
  * @c: test parameter
  *
  * Description: checks for lowercase
- * Returns (0)
+ * Return: Always 0
  */
 int  _islower(int c)
 {
