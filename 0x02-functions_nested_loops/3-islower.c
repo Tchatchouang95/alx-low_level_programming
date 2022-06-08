@@ -2,8 +2,10 @@
 
 /**
  * _islower - determine if a letter is lowercase
+ * @c: test parameter
  *
  * Description: checks for lowercase
+ * Returns (0)
  */
 int  _islower(int c)
 {
