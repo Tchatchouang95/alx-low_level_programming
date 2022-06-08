@@ -6,10 +6,8 @@
  * Description: Every output is always positive
  * Return: Always 0
  */
-int _abs(int)
+int _abs(int n)
 {
-	int n;
-
 	if (n < 0)
 	{
 		n = (-1) * n;
