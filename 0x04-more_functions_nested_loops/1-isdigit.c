@@ -4,7 +4,9 @@
 /**
  * _isdigit - checks if imput character is a digit
  * @c: input parameter
- * Return: int
+ *
+ * Description: checks for a digit
+ * Return: Always (0)
  */
 int _isdigit(int c)
 {
