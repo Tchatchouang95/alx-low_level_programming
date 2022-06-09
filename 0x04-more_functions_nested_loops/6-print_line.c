@@ -2,6 +2,7 @@
 
 /**
  * print_line - display dashes
+ * @n: parameter
  * Return: always 0
  */
 void print_line(int n)
@@ -11,8 +12,8 @@ void print_line(int n)
 	if (n > 0)
 	{
 		for (i = 0; i <= n; n++)
-		{
-			_putchar('_');
+		i{
+			_putchar(95);
 		}
 	}
 	_putchar('\n');
