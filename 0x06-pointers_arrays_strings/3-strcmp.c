@@ -17,10 +17,11 @@ int _strcmp(char *s1, char *s2)
 			gap = s1[i] - s2[i];
 			return (gap);
 		}
-		else
+		else if (s1[i] < s2[i])
 		{
 			gap = s2[i] - s1[i];
 			return (gap);
 		}
 	}
+	return (0);
 }
