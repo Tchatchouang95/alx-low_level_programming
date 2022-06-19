@@ -18,6 +18,7 @@ char *rot13(char *s)
 			if (s[i] == k[j])
 			{
 				s[i] = k[j + 26];
+				break;
 			}
 		}
 	}
