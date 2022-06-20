@@ -19,6 +19,7 @@ char *rot13(char *s)
 			if (s[i] == k[j])
 			{
 				s[i] = encode[j];
+				break;
 			}
 		}
 	}
