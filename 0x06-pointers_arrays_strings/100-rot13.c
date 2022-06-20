@@ -8,17 +8,19 @@
 char *rot13(char *s)
 {
 	int i, j;
+	char boolean;
 
 	char k[] = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; k[j] != '\0'; j++)
+		boolean = 0;
+		for (j = 0; k[j] != '\0' && boolean == 0; j++)
 		{
 			if (s[i] == k[j])
 			{
 				s[i] = k[j + 26];
-				break;
+				boolean = 1;
 			}
 		}
 	}
