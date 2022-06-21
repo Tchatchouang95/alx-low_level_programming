@@ -8,7 +8,7 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int x, y incr;
+	int x, y, incr;
 
 	incr = 0;
 	for (x = 0; s[x] != '\0'; x++)
@@ -20,7 +20,7 @@ unsigned int _strspn(char *s, char *accept)
 				incr++;
 			}
 		}
-		if (s[i] == ' ')
+		if (s[i] == ' ' || s[i] == ',')
 		{
 			break;
 		}
