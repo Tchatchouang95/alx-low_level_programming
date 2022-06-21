@@ -20,7 +20,7 @@ unsigned int _strspn(char *s, char *accept)
 				incr++;
 			}
 		}
-		if (s[i] == ' ' || s[i] == ',')
+		if (s[i] == ' ')
 		{
 			break;
 		}
