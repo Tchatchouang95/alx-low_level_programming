@@ -4,7 +4,7 @@
  * test_prime - makes tests to check if input value is prime or not
  * @x: increment
  * @y: test number
- * Return: Always 1 or 0;
+ * Return: Always 1 or 0
  */
 int test_prime(int x, int y)
 {
@@ -23,6 +23,7 @@ int test_prime(int x, int y)
 			return (test_prime(x + 1, y));
 		}
 	}
+	return (0);
 }
 /**
  * is_prime_number - check if an input number is prime or not
