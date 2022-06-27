@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] >= 'a' || *argv[i] <= 'z')
+			if (*argv[i] < 47 || *argv[i] > 57)
 			{
 				printf("Error");
 				return (1);
