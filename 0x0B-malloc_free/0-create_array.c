@@ -1,0 +1,28 @@
+#include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * create_array - creates an array of characters
+ * @size: input size
+ * @c: char of type c
+ * Return: Pointer
+ */
+char *create_array(unsigned int size, char c)
+{
+	unsigned int i;
+	char *array;
+
+	i = 0;
+
+	array = malloc(sizeof(char) * size);
+	if (size == 0 || array == '\0')
+	{
+		return ('\0');
+	}
+	for (i = 0; i < size; i++)
+	{
+		array[i] = c;
+	}
+	return (array);
+}
