@@ -52,13 +52,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	for (i = 0; i < l1; i++)
 	{
-		p[i] = s[i];
+		p[i] = s1[i];
 	}
 	for (i = 0; i < l2; i++)
 	{
 		p[l1 + i] = s2[i];
 	}
-	p[t1 + t2] = '\0';
+	p[l1 + l2] = '\0';
 	return (p);
 }
 
