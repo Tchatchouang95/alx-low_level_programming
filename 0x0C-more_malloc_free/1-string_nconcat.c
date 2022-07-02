@@ -28,7 +28,7 @@ unsigned int _strlen(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int l1, l2, i;
+	unsigned int l1, l2, i, j;
 	char *p;
 
 	if (s1 == NULL)
@@ -54,9 +54,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		p[i] = s1[i];
 	}
-	for (i = 0; i < l2; i++)
+	for (j = 0; s2[j] != '\0' && j != n; i++, j++)
 	{
-		p[l1 + i] = s2[i];
+		p[i] = s2[j];
 	}
 	p[l1 + l2] = '\0';
 	return (p);
