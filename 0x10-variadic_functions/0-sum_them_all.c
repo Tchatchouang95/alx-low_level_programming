@@ -20,11 +20,14 @@ int sum_them_all(const unsigned int n, ...)
 	{
 		return (0);
 	}
-	for (i = 0; i < n; i++)
+	else
 	{
-		num = va_arg(parameters, int);
-		sum = sum + num;
+		for (i = 0; i < n; i++)
+		{
+			num = va_arg(parameters, int);
+			sum = sum + num;
+		}
+		va_end(parameters);
+		return (sum);
 	}
-	va_end(parameters);
-	return (sum);
 }
