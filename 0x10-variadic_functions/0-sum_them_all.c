@@ -5,24 +5,26 @@
 /**
  * sum_them_all - sum's all input values
  * @n: last named parameter
- * Return : Always the sum
+ *
+ * Description: Sums all parameters of the function
+ * Return: return 0 if there are 0 parameters
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int sum = 0, i;
-	va_list alt;
+	unsigned int i;
+	int sum = 0, num;
+	va_list parameters;
 
-	va_start(alt, n);
+	va_start(parameters, n);
 	if (n == 0)
 	{
 		return (0);
 	}
 	for (i = 0; i < n; i++)
 	{
-		int n = va_arg(alt, unsigned int);
-
-		sum += n;
+		num = va_arg(parameters, int);
+		sum = sum + num;
 	}
-	va_end(alt);
+	va_end(parameters);
 	return (sum);
 }
