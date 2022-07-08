@@ -11,10 +11,9 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
+	va_list parameters;
 	unsigned int i;
 	int sum = 0, num;
-
-	va_list parameters;
 
 	va_start(parameters, n);
 	if (n == 0)
