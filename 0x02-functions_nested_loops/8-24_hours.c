@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * jack_bauer - Prints every minutes of the day of jack bauer, starting from 00:00 to 23:59
+ * jack_bauer - Prints every minutes jack  bauer, starting from 00:00 to 23:59
  *
  * Return: return nothing
  */
@@ -16,8 +16,8 @@ void jack_bauer(void)
 			_putchar(i / 10 + '0');
 			_putchar(i % 10 + '0');
 			_putchar(':');
-			_putchar(i / 10 + '0');
-			_putchar(i % 10 + '0');
+			_putchar(j / 10 + '0');
+			_putchar(j % 10 + '0');
 			_putchar('\n');
 		}
 	}
