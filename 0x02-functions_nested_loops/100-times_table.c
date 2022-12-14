@@ -19,14 +19,7 @@ void print_times_table(int n)
 		{
 			for (j = 0; j <= n; j++)
 			{
-				if (j == 0)
-				{
-					_putchar(0 + '0');
-					continue;
-				}
 				product = i * j;
-				_putchar(',');
-				_putchar(' ');
 				if (product >= 10)
 				{
 					_putchar(product / 10 + '0');
@@ -37,6 +30,8 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar(product + '0');
 				}
+				_putchar(',');
+				_putchar(' ');
 			}
 			_putchar('\n');
 		}
