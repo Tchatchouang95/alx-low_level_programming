@@ -19,7 +19,6 @@ void times_table(void)
 				continue;
 			}
 			product = l * w;
-			_putchar(product + '0');
 			_putchar(',');
 			_putchar(' ');
 			if (product >= 10)
