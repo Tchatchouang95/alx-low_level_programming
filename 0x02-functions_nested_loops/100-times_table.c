@@ -24,7 +24,7 @@ void display_digits(int x)
 	{
 		_putchar(x / 100 + '0');
 		_putchar((x % 100) / 10 + '0');
-		_putchar(x % 10 + '0')
+		_putchar(x % 10 + '0');
 	}
 	else
 	{
