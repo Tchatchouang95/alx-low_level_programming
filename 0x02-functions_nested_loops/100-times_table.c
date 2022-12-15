@@ -1,7 +1,37 @@
 #include "main.h"
 
 /**
- * print_times_table - Prints the n times tables
+ * display_digits - Computes and displays figures
+ * @x: Arguement
+ *
+ * Return: void
+ */
+void display_digits(int x)
+{
+	if (x < 10)
+	{
+		_putchar(' ');
+		_putchar(' ');
+		_putchar(x + '0');
+	}
+	else if (x < 100)
+	{
+		_putchar(' ');
+		_putchar(x / 10 + '0');
+		_putchar(x % 10 + '0');
+	}
+	else if (x >= 100)
+	{
+		_putchar(x / 100 + '0');
+		_putchar((x % 100) / 10 + '0');
+		_putchar(x % 10 + '0')
+	}
+	else
+	{
+	}
+}
+/**
+ * print_times_table - Prints thhe N times tables
  * @n: Arguement
  *
  * Return: void
@@ -27,27 +57,7 @@ void print_times_table(int n)
 				product = i * j;
 				_putchar(',');
 				_putchar(' ');
-				if (product < 10)
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(product + '0');
-				}
-				else if (product < 100)
-				{
-					_putchar(' ');
-					_putchar(product / 10 + '0');
-					_putchar(product % 10 + '0');
-				}
-				else if (product >= 100)
-				{	
-					_putchar(product / 100 + '0');
-					_putchar((product % 100) / 10 + '0');
-					_putchar(product % 10 + '0');
-				}
-				else
-				{
-				}
+				display_digits(product);
 			}
 			_putchar('\n');
 		}
