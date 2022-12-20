@@ -4,7 +4,7 @@
 /**
  * _atoi - Converts a string into an integer
  * @s: pointer to a string
- * 
+ *
  * Return: int
  */
 int _atoi(char *s)
