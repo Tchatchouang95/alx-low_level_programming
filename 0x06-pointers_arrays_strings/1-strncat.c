@@ -5,6 +5,7 @@
  * @dest: String to which @src is appended
  * @src: String appended to @dest
  * Return: Always dest
+ * @n: number of bytes to be considered in @src
  */
 char *_strncat(char *dest, char *src, int n)
 {
