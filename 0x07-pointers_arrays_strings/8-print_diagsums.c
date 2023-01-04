@@ -19,7 +19,7 @@ void print_diagsums(int *a, int size)
 		sum += *(a + jump);
 		jump += size + 1;
 	}
-	printf("%d", sum);
+	printf("%d,", sum);
 
 	jump = 0;
 	sum = 0;
@@ -29,4 +29,5 @@ void print_diagsums(int *a, int size)
 		jump += size - 1;
 		sum += *(a + jump);
 	}
+	printf("%d\n", sum);
 }
