@@ -31,5 +31,5 @@ int _sqrt_recursion(int n)
 	int i;
 
 	i = 1;
-	return (square_root(n, 1));
+	return (square_root(n, i));
 }
