@@ -6,7 +6,7 @@
  * @argv: The array containing arguements suppied to the prog
  * Return: Always sucess
  */
-int main(int argc, char *argv[])
+int main(int argc __attribute__ ((unused)), char *argv[])
 {
 	printf("%s\n", argv[0]);
 	return (0);
