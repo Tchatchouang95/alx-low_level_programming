@@ -3,7 +3,7 @@
 /**
  * main - Main function
  * @argc: Counter
- * @argv: String of arguements passed 
+ * @argv: String of arguements passed
  * Return: Always 0
  */
 int main(int argc, char *argv[])
