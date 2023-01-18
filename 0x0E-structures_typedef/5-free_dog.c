@@ -3,7 +3,7 @@
 
 /**
  * free_dog - Frees the dog
- * @d: Pointer to structure parameters 
+ * @d: Pointer to structure parameters
  */
 void free_dog(dog_t *d)
 {
