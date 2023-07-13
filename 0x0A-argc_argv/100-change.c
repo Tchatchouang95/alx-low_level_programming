@@ -1,14 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int change_cents(int x);
 /**
  * main - make change for an amount of money
  * @argc: Number of arguemets passed in the terminal
  * @argv: Stores arguements passed to the terminal
  * Return: Always 0
  */
-int change_cents(int x);
-
 int main(int argc, char *argv[])
 {
 	int cents, result;
