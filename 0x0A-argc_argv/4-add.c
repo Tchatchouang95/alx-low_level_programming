@@ -9,26 +9,30 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i;
+	unsigned int j, sum = 0;
+	char *k;
 
-	if (argc < 2)
+	if (argc < 3)
 	{
 		printf("%d\n", 0);
-		return (0);
 	}
 	else
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] > '0' && *argv[i] < '9')
+			k = argv[i];
+
+			for (j = 0; k[j] != '\0'; j++)
 			{
-				sum += atoi(argv[i]);
+				if (k[j] < '0' || k[j] > '9')
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+			sum += atoi(k);
+			k++;
 		}
 		printf("%d\n", sum);
 	}
