@@ -22,13 +22,13 @@ char *_strdup(char *str)
 	{
 		len++;
 	}
-	string = (char *)malloc((len + 1) * sizeof(char));
+	string = (char *)malloc(sizeof(char) * (len + 1));
 	if (string == NULL)
 	{
 		return (NULL);
 	}
 	for (j = 0; str[j]; j++)
-	{
+	{i
 		string[j] = str[j];
 	}
 	string[len] = '\0';
