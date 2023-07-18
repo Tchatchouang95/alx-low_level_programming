@@ -23,18 +23,14 @@ char *str_concat(char *s1, char *s2)
 		s1_len++, s2_len++;
 	}
 	s3 = (char *)malloc(sizeof(char) * (s1_len + s2_len + 2));
-	while (s1[i] != '\0')
+	if (s3 != NULL)
 	{
-		s3[j] = s1[i];
-		i++, j++;
+		for (i = 0; s1[i] != '\0'; i++, j++)
+			s3[j] = s1[i];
+		for (i = 0; s2[i] != '\0'; i++, j++)
+			s3[j] = s2[i];
+
+		s3[j] = '\0';
 	}
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		s3[j] = s2[i];
-		i++, j++;
-	}
-	s3[j] = '\0';
 	return (s3);
 }
-
