@@ -14,15 +14,15 @@ char *str_concat(char *s1, char *s2)
 	char *s3;
 
 	s1_len = s2_len = i = j = 0;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (s1[s1_len] != '\0' && s2[s2_len] != '\0')
 	{
 		s1_len++, s2_len++;
 	}
 	s3 = (char *)malloc(sizeof(char) * (s1_len + s2_len + 2));
-	if (s3 == NULL)
-	{
-		return (NULL);
-	}
 	while (s1[i] != '\0')
 	{
 		s3[j] = s1[i];
