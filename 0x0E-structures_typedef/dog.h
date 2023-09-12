@@ -2,6 +2,7 @@
 #define dog
 
 /**
+ * struct dog - Defines a dog new type
  * @name: dog's name
  * @age: dog's age
  * @owner: dog's owner name
