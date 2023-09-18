@@ -3,6 +3,7 @@
 
 /**
  * array_iterator - Executes a function given as a parameter
+ * @array: array to display
  * @size: size of hte array
  * @action: pointer to function
  * Return: void
