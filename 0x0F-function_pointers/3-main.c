@@ -6,7 +6,7 @@
  * @argv: strings of arguements
  * Return: 1
  */
-int main(int__attribute__((__unused__)) argc, char *argv[])
+int main(int__attribute__((__unused__))argc, char *argv[])
 {
 	int a, b;
 	int (*ptr_func)(int, int);
