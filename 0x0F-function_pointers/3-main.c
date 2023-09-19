@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b;
+	register int a, b;
 	int (*ptr_func)(int, int);
 
 	if (argc != 4)
@@ -26,6 +26,6 @@ int main(int argc, char *argv[])
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
-	printf("%d\n", ptr_func(a, b));
+	printf("%i\n", ptr_func(a, b));
 	return (1);
 }
