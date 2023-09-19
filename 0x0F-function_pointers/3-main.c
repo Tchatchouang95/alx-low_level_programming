@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
 
 /**
@@ -10,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	register int a, b;
+	int a, b;
 	int (*ptr_func)(int, int);
 
 	if (argc != 4)
@@ -26,6 +24,6 @@ int main(int argc, char *argv[])
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
-	printf("%i\n", ptr_func(a, b));
+	printf("%d\n", ptr_func(a, b));
 	return (1);
 }
