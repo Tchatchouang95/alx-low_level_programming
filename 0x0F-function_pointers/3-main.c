@@ -17,13 +17,18 @@ int main(int __attribute__((__unused__))argc, char *argv[])
 		exit(98);
 	}
 	ptr_func = get_op_func(argv[2]);
-	if (!ptr_func)
+	if (ptr_func == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
+	if (b == 0 && (*argv[2] == '%' || *argv[2] == '/'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	printf("%d\n", ptr_func(a, b));
-	return (1);
+	return (0);
 }
