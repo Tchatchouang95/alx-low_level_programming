@@ -52,13 +52,15 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *current, *new;
 	char *dup_str;
 
-	if (str == NULL)
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
 	{
 		return (NULL);
 	}
 	dup_str = str_dup(str);
-	if (dup_str == NULL)
+	if (str == NULL)
 	{
+		free(new);
 		return (NULL);
 	}
 	new->str = dup_str;
@@ -68,13 +70,15 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (*head == NULL)
 	{
 		*head = new;
-		return (*head);
 	}
-	current = *head;
-	while (current->next != NULL)
+	else
 	{
-		current = current->next;
+		current = *head;
+		while (current->next != NULL)
+		{
+			current = current->next;
+		}
+		current->next = new;
 	}
-	current->next = new;
 	return (*head);
 }
