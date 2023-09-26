@@ -7,11 +7,11 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	register int count;
+	size_t count;
 
 	while (h != NULL)
 	{
-		printf("%i\n", h->n);
+		printf("%d\n", h->n);
 		h = h->next;
 		count++;
 	}
