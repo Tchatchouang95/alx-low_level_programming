@@ -1,5 +1,6 @@
 #ifndef linked_list
-#define linked list
+#define linked_list
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
