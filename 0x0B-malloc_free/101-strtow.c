@@ -9,13 +9,13 @@ int str_len(char *s)
 {
 	int index = 0, len = 0;
 
-	while (*(str + index) && *(str + index) != ' ')
+	while (*(s + index) && *(s + index) != ' ')
 	{
 		len++;
 		index++;
 	}
 
-	return (i);
+	return (len);
 }
 
 /**
