@@ -22,42 +22,21 @@ int str_len(char *s)
  */
 int count_words(char *string)
 {
-	int count, pos, i;
+	int index = 0, len = 0, words = 0;
 
-	pos = 0;
-	for (i = 0; string[i] != '\0'; i++)
+	for (index = 0; *(string + index); index++)
 	{
-		if (string[i] == ' ')
-		{
-			if (pos > 0)
-				++count;
-			pos = 0;
-			continue;
-		}
-		++pos;
+		len++;
 	}
-	return (count);
-}
-/**
- * sub_str - Will return a string at specified pos
- * @str: The string
- * @start: The start position
- * @end: The end position
- *
- * Return: char pointer
- */
-char *sub_str(char *str, int start, int end)
-{
-	char *sub;
-	int i, size;
-
-	size = end - start;
-	sub = (char *)malloc(sizeof(char) * size + 1);
-	for (i = 0; start < end; i++, start++)
-	sub[i] = str[start];
-	sub[i] = '\0';
-
-	return (sub);
+	for (index = 0; index < len; index++)
+	{
+		if (*(string + index) != ' ')
+		{
+			words++;
+			index += str_len(string + index);
+		}
+	}
+	return (words);
 }
 
 /**
@@ -68,43 +47,37 @@ char *sub_str(char *str, int start, int end)
  */
 char **strtow(char *str)
 {
-char **words = NULL;
-char *word = NULL;
-int row, pos, i, m, n, end;
+	char **strings;
+	int index = 0, words, w, letters, l;
 
-	if (str != NULL && str[0] != '\0')
+	if (str == NULL || str[0] == '\0')
+		return (NULL);
+
+	words = count_words(str);
+	if (words == 0)
+		return (NULL);
+	strings = malloc(sizeof(char *) * (words + 1));
+	if (strings == NULL)
+		return (NULL);
+	for (w = 0; w < words; w++)
 	{
-		row = count_words(str);
-		if (row > 0)
+		while (str[index] == ' ')
+			index++;
+		letters = count_words(str + index);
+		strings[w] = malloc(sizeof(char) * (letters + 1));
+
+		if (strings[w] == NULL)
 		{
-			words = (char **)malloc(sizeof(char) * row + 1);
-			if (words != NULL)
-			{
-				for (i = 0, pos = 0, m = 0; str[i] != '\0'; i++)
-				{
-					if (str[i] == ' ' || str[i + 1] == '\0')
-					{
-						end = str[i + 1] == '\0' ? 1 : 0;
-						if (pos > 0)
-						{
-							word = sub_str(str, i - pos, i + end);
-							words[m] = (char *)malloc(sizeof(char) * str_len(word) + 1);
-							if (words[m] != NULL)
-							{
-								for (n = 0; word[n] != '\0'; n++)
-									words[m][n] = (char)word[n];
-								words[m][n++] = '\0';
-								m++;
-							}
-						}
-						pos = 0;
-						continue;
-					}
-					++pos;
-				}
-				words[m] = NULL;
-			}
+			for (; w >= 0; w--)
+				free(strings[w]);
+			free(strings);
+			return (NULL);
 		}
+		for (l = 0; l < letters; l++)
+			strings[w][l] = str[index++];
+		strings[w][l] = '\0';
 	}
-	return (words);
+	strings[w] = NULL;
+
+	return (strings);
 }
