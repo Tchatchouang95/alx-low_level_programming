@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <math.h>
 /**
  * _pow_recursion - Finds the power of a number
  * @x: first arguement
@@ -16,5 +16,12 @@ int _pow_recursion(int x, int y)
 	{
 		return (1);
 	}
-	return (x * _pow_recursion(x, y - 1));
+	else if (y == 1)
+	{
+		return (x);
+	}
+	else
+	{
+		return (x * _pow_recursion(x, y - 1));
+	}
 }
