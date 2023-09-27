@@ -1,8 +1,5 @@
 #include "lists.h"
 
-size_t loop_listint_count(listint_t *head);
-size_t free_listint_safe(listint_t **h);
-
 /**
  * loop_listint_count - Counts the number of nodes in a looped link list
  * @head: pointer to the first node of the link list
@@ -10,36 +7,36 @@ size_t free_listint_safe(listint_t **h);
  */
 size_t loop_listint_count(listint_t *head)
 {
-	listint_t *tortoise, *hare;
+	listint_t *current, *hare;
 	size_t nodes = 1;
 
-	if (head == NULL || head->next == NULL)
+	if ((!head) || !(head->next))
 	{
 		return (0);
 	}
-	tortoise = head->next;
+	current = head->next;
 	hare = (head->next)->next;
 
 	while (hare)
 	{
-		if (tortoise == hare)
+		if (current == hare)
 		{
-			tortoise = head;
-			while (tortoise != hare)
+			current = head;
+			while (current != hare)
 			{
 				nodes++;
-				tortoise = tortoise->next;
+				current = current->next;
 				hare = hare->next;
 			}
-			tortoise = tortoise->next;
-			while (tortoise != hare)
+			current = current->next;
+			while (current != hare)
 			{
 				nodes++;
-				tortoise = tortoise->next;
+				current = current->next;
 			}
 			return (nodes);
 		}
-		tortoise = tortoise->next;
+		current = current->next;
 		hare = (hare->next)->next;
 	}
 	return (0);
