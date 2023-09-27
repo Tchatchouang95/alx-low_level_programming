@@ -51,6 +51,7 @@ size_t free_listint_safe(listint_t **h)
 {
 	size_t nodes, index;
 	listint_t *temp;
+
 	nodes = 0;
 
 	if (nodes == 0)
