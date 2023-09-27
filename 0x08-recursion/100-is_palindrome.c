@@ -28,9 +28,7 @@ int str_compare(char *s, int l, int r)
 	if (*(s + l) == *(s + r))
 	{
 		if (l == r || l == r + 1)
-		{
 			return (1);
-		}
 		return (0 + str_compare(s, l, r - 1));
 	}
 	return (0);
