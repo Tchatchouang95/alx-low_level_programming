@@ -1,5 +1,8 @@
 #include "lists.h"
 
+size_t loop_listint_count(listint_t *head);
+size_t free_listint_safe(listint_t **h);
+
 /**
  * loop_listint_count - Counts the number of nodes in a looped link list
  * @head: pointer to the first node of the link list
