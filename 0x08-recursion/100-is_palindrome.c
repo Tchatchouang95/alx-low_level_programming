@@ -13,7 +13,7 @@ int _strlen(char *s)
 	}
 	else
 	{
-		return (1 + _strlen(s + 1));
+		return (1 + _strlen(++s));
 	}
 }
 /**
@@ -25,14 +25,24 @@ int _strlen(char *s)
  */
 int str_compare(char *s, int l, int r)
 {
-	if (*(s + l) == *(s + r))
+	if (l > r)
+		return (0);
+	else if (s[l] != s[r])
 	{
-		if (l == r || l == r + 1)
-			return (1);
-		return (0 + str_compare(s, l, r - 1));
+		return (0);
 	}
-	return (0);
+	else if (l == r && s[l] == s[r])
+	{
+		return (1);
+	}
+	else if (l == r - 1 && s[l] == s[r - 1])
+	{
+		return (1);
+	}
+	else
+		return (str_compare(s, ++l, --r));
 }
+
 /**
  * is_palindrome - checks if a string is a palindrome
  * @s: string
@@ -40,9 +50,5 @@ int str_compare(char *s, int l, int r)
  */
 int is_palindrome(char *s)
 {
-	if (*s == '\0')
-	{
-		return (1);
-	}
 	return (str_compare(s, 0, _strlen(s) - 1));
 }
