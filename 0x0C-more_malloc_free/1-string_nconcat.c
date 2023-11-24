@@ -33,27 +33,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	len_s1 = str_len(s1);
 	len_s2 = str_len(s2);
-	tot_len = len_s1 + len_s2;
-	concat = (char *)malloc((tot_len + 1) * sizeof(char));
+	if (n >= len_s2)
+		n = len_s2;
+
+	tot_len = len_s1 + n + 1;
+	concat = (char *)malloc(tot_len * sizeof(char));
 	if (concat == NULL)
 		return (NULL);
 	for (i = 0; i < len_s1; i++)
 		concat[i] = s1[i];
-	if (n > len_s2)
+	for (j = 0; j < n; j++)
 	{
-		for (j = 0; j < len_s2; j++)
-		{
-			concat[i] = s2[j];
-			i++;
-		}
-	}
-	else
-	{
-		for (j = 0; j < n; j++)
-		{
-			concat[i] = s2[j];
-			i++;
-		}
+		concat[i] = s2[j];
+		i++;
 	}
 	concat[i] = '\0';
 	return (concat);
