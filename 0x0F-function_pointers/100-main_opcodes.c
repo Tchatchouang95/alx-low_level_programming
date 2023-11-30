@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int (*addr)(int, char**) = main;
 	unsigned char opcode;
 
-	if (arg != 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
